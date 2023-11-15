@@ -8,10 +8,10 @@ vim.opt.colorcolumn = '+0,+20'
 vim.g.snipmate_snippets_path = vim.fn.stdpath 'config' .. '/lua/custom/snippets'
 
 -- spell Settings
-vim.opt_local.spelllang= 'en_us,computer-science'
-vim.opt_local.spellsuggest = 'fast'
-vim.opt_local.spelloptions = 'camel'
-vim.opt_local.spellfile = vim.fn.stdpath 'config' .. '/lua/custom/after/spell/en.utf-8.add'
+vim.opt.spelllang    = 'en_us,computer-science'
+vim.opt.spellsuggest = 'fast'
+vim.opt.spelloptions = 'camel'
+vim.opt.spellfile    = vim.fn.stdpath 'config' .. '/lua/custom/after/spell/en.utf-8.add'
 
 --
 -- https://neovim.io/doc/user/lua.html#vim.filetype
