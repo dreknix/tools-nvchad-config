@@ -7,6 +7,12 @@ vim.opt.colorcolumn = '+0,+20'
 -- extend in snipmate format
 vim.g.snipmate_snippets_path = vim.fn.stdpath 'config' .. '/lua/custom/snippets'
 
+-- spell Settings
+vim.opt_local.spelllang= 'en_us,computer-science'
+vim.opt_local.spellsuggest = 'fast'
+vim.opt_local.spelloptions = 'camel'
+vim.opt_local.spellfile = vim.fn.stdpath 'config' .. '/lua/custom/after/spell/en.utf-8.add'
+
 --
 -- https://neovim.io/doc/user/lua.html#vim.filetype
 --
@@ -51,3 +57,5 @@ vim.api.nvim_create_autocmd('TextYankPost', {
     vim.highlight.on_yank { timeout = 200 }
   end
 })
+
+vim.opt.exrc = true
