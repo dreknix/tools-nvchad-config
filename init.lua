@@ -13,6 +13,9 @@ vim.opt.spellsuggest = 'fast'
 vim.opt.spelloptions = 'camel'
 vim.opt.spellfile    = vim.fn.stdpath 'config' .. '/lua/custom/after/spell/en.utf-8.add'
 
+-- set the TeX flavor to LaTeX for filetype plugin (`:help ft-tex-plugin`)
+vim.g.tex_flavor = 'latex'
+
 --
 -- https://neovim.io/doc/user/lua.html#vim.filetype
 --
@@ -57,5 +60,3 @@ vim.api.nvim_create_autocmd('TextYankPost', {
     vim.highlight.on_yank { timeout = 200 }
   end
 })
-
-vim.opt.exrc = true
