@@ -18,7 +18,13 @@ M.general = {
     ['<A-Down>'] = { '<cmd> TmuxNavigateDown <CR>', 'Window down' },
     ['<A-Up>'] = { '<cmd> TmuxNavigateUp <CR>', 'Window up' },
 
-    ["<C-Up>"] = { "<cmd> cprev <CR>", "Previous Quicklist location" },
+    ["<C-S-Up>"] = { "<cmd> cprev <CR>", "Previous Quicklist location" },
+    ["<C-S-Down>"] = { "<cmd> cnext <CR>", "Next Quicklist location" },
+
+    ["<C-S-Left>"] = { "<cmd> tabprevious <CR>", "Previous tab" },
+    ["<C-S-Right>"] = { "<cmd> tabnext <CR>", "Next tab" },
+
+    ["<leader>y"] = { "<cmd> tabedit README.md <CR>", "Open README.md in tab" },
 
     ['<F2>'] = {
       function()
