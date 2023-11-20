@@ -106,6 +106,17 @@ M.nvimtree = {
       },
     },
   },
+
+  view = {
+    side = "left",
+  },
+
+  -- add custom filters see `:help nvim-tree.filters.custom`
+  filters = {
+    custom = {
+      "^.git$",
+    },
+  },
 }
 
 --
