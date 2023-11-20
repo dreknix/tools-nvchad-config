@@ -49,14 +49,26 @@ vim.api.nvim_create_autocmd({'BufNewFile', 'BufRead'}, {
   end
 })
 
--- highlight which lines are currently yanked (e.g. yy - hightlights current
--- line)
 vim.api.nvim_create_augroup('custom_buffer', { clear = true })
 
+-- highlight which lines are currently yanked (e.g. yy - hightlights current
+-- line)
 vim.api.nvim_create_autocmd('TextYankPost', {
   group = 'custom_buffer',
   pattern = '*',
   callback = function()
     vim.highlight.on_yank { timeout = 200 }
+  end
+})
+
+-- jump to last position when opening a file
+vim.api.nvim_create_autocmd('BufReadPost', {
+  group = 'custom_buffer',
+  pattern = '*',
+  callback = function()
+    local last_cursor_pos, last_line = vim.fn.line([['"]]), vim.fn.line("$")
+    if last_cursor_pos > 1 and last_cursor_pos <= last_line then
+      vim.fn.cursor(last_cursor_pos, 1)
+    end
   end
 })
