@@ -1,7 +1,16 @@
 local M = {}
 
+local highlights = require "custom.highlights"
+
 M.ui = {
+  theme_toggle = {
+    'one_light',
+    'catppuccin',
+  },
   theme = 'catppuccin',
+
+  hl_override = highlights.override,
+  hl_add = highlights.add,
 
   statusline = {
     theme = 'default',  -- default/vscode/vscode_colored/minimal
@@ -14,7 +23,7 @@ M.ui = {
         local current_line = vim.fn.line '.'
         local total_line = vim.fn.line '$'
         local percentage = math.modf((current_line / total_line) * 100)
-        text = string.format('%2d', percentage) .. '%%'
+        local text = string.format('%2d', percentage) .. '%%'
 
         text = (current_line == 1 and 'Top') or text
         text = (current_line == total_line and 'Bot') or text
